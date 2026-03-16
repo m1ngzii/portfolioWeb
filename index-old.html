@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<meta charset="UTF-8"
+<title>  </title>
+<link rel="stylesheet" href="style.css">
+
+<div class="desktop">
+
+    <div class="icon" onclick="openWindow('aboutWindow')">
+        <img src="icons/about.png">
+        <p>About</p>
+    </div>
+
+    <div class="icon" onclick="openWindow('projectsWindow')">
+        <img src="icons/projects.png">
+        <p>Projects</p>
+    </div>
+
+    <div class="icon" onclick="openWindow('skillsWindow')">
+        <img src="icons/skills.png">
+        <p>Skills</p>
+    </div>
+
+    <div class="icon" onclick="openWindow('contactWindow')">
+        <img src="icons/contact.png">
+        <p>Contact</p>
+    </div>
+
+</div>
+
+
+<div id="aboutWindow" class="window">
+
+    <div class="window-header">
+        <span>About Me</span>
+        <button onclick="closeWindow('aboutWindow')">X</button>
+    </div>
+
+    <div class="window-content">
+
+        <h2>About Me</h2>
+        <p>
+        I'm Adrion, a Computer Science student interested in cybersecurity,
+        networking, and human-computer interaction.
+        </p>
+
+
+
+    </div>
+
+
+
+</div>
+
+<div id="projectsWindow" class="window">
+
+<div class="window-header">
+<span>Projects</span>
+<button onclick="closeWindow('projectsWindow')">X</button>
+</div>
+
+<div class="window-content">
+
+<h1>My Projects</h1>
+
+<div class="projects-container">
+
+<div class="project-card" onclick="toggleProject(this)">
+<h3>Is Anyone There?</h3>
+
+<div class="project-details">
+
+<p>
+A small horror-themed interactive project where the player
+tries to determine if someone is responding on the other side.
+</p>
+
+<p><b>Technologies:</b> C++, Game Logic</p>
+
+</div>
+</div>
+
+
+<div class="project-card" onclick="toggleProject(this)">
+<h3>Buckets and Balls</h3>
+
+<div class="project-details">
+
+<p>
+A networked multiplayer bucket-catching game created using sockets.
+</p>
+
+<p><b>Technologies:</b> Python, Networking</p>
+
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div id="skillsWindow" class="window">
+
+<div class="window-header">
+<span>Skills</span>
+<button onclick="closeWindow('skillsWindow')">X</button>
+</div>
+
+<div class="window-content">
+
+<h1>My Skills</h1>
+
+<div class="skills-grid">
+
+<div class="skill-card">C++</div>
+<div class="skill-card">Python</div>
+<div class="skill-card">GitHub</div>
+<div class="skill-card">Linux</div>
+<div class="skill-card">Problem Solving</div>
+<div class="skill-card">Collaboration</div>
+
+</div>
+
+</div>
+</div>
+
+
+<div id="contactWindow" class="window">
+
+<div class="window-header">
+<span>Contact</span>
+<button onclick="closeWindow('contactWindow')">X</button>
+</div>
+
+<div class="window-content">
+
+<h1>Contact Me</h1>
+
+<p>Email: athom0922@gmail.com</p>
+
+<p>
+<a href="https://github.com/m1ngzii" target="_blank">
+GitHub
+</a>
+</p>
+
+<p>
+<a href="https://www.linkedin.com/in/aniya-thomas-87254738b/" target="_blank">
+LinkedIn
+</a>
+</p>
+
+</div>
+</div>
+
+
+<script>
+
+function openWindow(id) {
+document.getElementById(id).style.display = "block";
+}
+
+function closeWindow(id) {
+document.getElementById(id).style.display = "none";
+}
+
+function toggleProject(card) {
+card.classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>

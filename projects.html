@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects - Adrion Thomas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <span class="logo">Adrion Thomas</span>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i><span>About Me</span></a></li>
+            <li><a class="active" href="projects.html"><i class="fas fa-code"></i><span>Projects</span></a></li>
+            <li><a href="skills.html"><i class="fas fa-star"></i><span>Skills</span></a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+            <li><a href="resume.html"><i class="fas fa-file-alt"></i><span>Resume</span></a></li>
+        </ul>
+    </header>
+
+    <section class="projects-section">
+        <h1 class="projects-title"> My Projects </h1>
+        
+        <div class="project-books">
+            <div class="project-book" onclick="openBook(this, 'book1')">
+                <div class="book-spine"></div>
+                <div class="book-container">
+                    <div class="book-cover">
+                        <h3 class="book-title">Is Anyone There?</h3>
+                        <p class="book-subtitle">A Horror Interactive Experience</p>
+                        <span class="open-indicator">
+                            <i class="fas fa-book-open"></i>
+                        </span>
+                    </div>
+                    <div class="book-pages">
+                        <div class="pages-content">
+                            <p class="page-text">
+An escape room game where the player needs to evacuate a failing rocket ship. The game's puzzles grow increasingly complicated and the time is continously going down.                              </p>
+                            <div class="page-line"></div>
+                            <p><strong>Technologies Used:</strong></p>
+                            <div class="tech-badges">
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Game Logic</span>
+                                <span class="tech-badge">Interactive Design</span>
+                            </div>
+                            <div class="page-line"></div>
+                            <a href="https://github.com/CS33901-Team-Alpha/Is-Anyone-There" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-book" onclick="openBook(this, 'book2')">
+                <div class="book-spine"></div>
+                <div class="book-container">
+                    <div class="book-cover">
+                        <h3 class="book-title">Buckets and Balls</h3>
+                        <p class="book-subtitle">Physics-Based Puzzle Game</p>
+                        <span class="open-indicator">
+                            <i class="fas fa-book-open"></i>
+                        </span>
+                    </div>
+                    <div class="book-pages">
+                        <div class="pages-content">
+                            <p class="page-text">
+                                A Papa Louie-inspired physics game. The player plays as Roy from Papa's Pizzeria and has to grab the correct pizza toppings or else they're penalized! As the game goes on, the toppings fall faster. 
+                                The game is interesting because has two sections: the client and the server. The client must wait for the server to be deployed before they can connect to it and has to ensure it has the same IP Address and port of the server to play. 
+                            </p>
+                            <div class="page-line"></div>
+                            <p><strong>Technologies Used:</strong></p>
+                            <div class="tech-badges">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Pygame</span>
+                                <span class="tech-badge">Sockets</span>
+                                <span class="tech-badge">Networking</span>
+
+                            </div>
+                            <div class="page-line"></div>
+                            <a href="https://github.com/alprack/Buckets-n-Balls" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-book" onclick="openBook(this, 'book3')">
+                <div class="book-spine"></div>
+                <div class="book-container">
+                    <div class="book-cover">
+                        <h3 class="book-title"> Secure Programming Final Project </h3>
+                        <p class="book-subtitle"> Using SQL, hashing, and encryption to ensure security in a bank.</p>
+                        <span class="open-indicator">
+                            <i class="fas fa-book-open"></i>
+                        </span>
+                    </div>
+                    <div class="book-pages">
+                        <div class="pages-content">
+                            <p class="page-text">
+                                heh
+                            </p>
+                            <div class="page-line"></div>
+                            <p><strong>Technologies Used:</strong></p>
+                            <div class="tech-badges">
+                                <span class="tech-badge">C++</span>
+                                <span class="tech-badge">SQLite</span>
+                                <span class="tech-badge">OpenSSL</span>
+                                <span class="tech-badge">SHA-256</span>
+                            </div>
+
+                            <div class="page-line"></div>
+                            <a href="https://github.com/ian-1979/Secure-Programming-Final-Project" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i>
+                                View on Github
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        function openBook(bookElement, bookId) {
+            // Check if this book is already open
+            const isCurrentlyOpen = bookElement.classList.contains('open');
+            
+            // Close all books first and reset heights
+            document.querySelectorAll('.project-book').forEach(book => {
+                book.classList.remove('open');
+                book.style.height = '400px'; // Reset to original height
+            });
+            
+            // Only open the clicked book if it wasn't already open
+            if (!isCurrentlyOpen) {
+                bookElement.classList.add('open');
+                
+                // Measure content and set appropriate height
+                setTimeout(() => {
+                    const bookPages = bookElement.querySelector('.pages-content');
+                    const contentHeight = bookPages.scrollHeight;
+                    
+                    // Calculate needed height (content + padding + extra space)
+                    const neededHeight = Math.max(400, contentHeight + 60);
+                    
+                    // Set the new height for the book
+                    bookElement.style.height = neededHeight + 'px';
+                    
+                    // Create ripple effect
+                    createRipple(bookElement);
+                }, 100);
+                
+                // Scroll to the opened book
+                setTimeout(() => {
+                    bookElement.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest' 
+                    });
+                }, 200);
+            }
+        }
+
+        function createRipple(element) {
+            // Create a subtle ripple effect
+            const ripple = document.createElement('div');
+            ripple.style.position = 'absolute';
+            ripple.style.width = '100px';
+            ripple.style.height = '100px';
+            ripple.style.borderRadius = '50%';
+            ripple.style.background = 'rgba(147, 112, 219, 0.3)';
+            ripple.style.transform = 'scale(0)';
+            ripple.style.animation = 'ripple 0.6s ease-out';
+            ripple.style.pointerEvents = 'none';
+            
+            element.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        }
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

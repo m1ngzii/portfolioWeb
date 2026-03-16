@@ -1,0 +1,187 @@
+/* ----------------------------- */
+/* GENERAL PAGE STYLING */
+/* ----------------------------- */
+
+body {
+    margin: 0;
+    font-family: "Courier New", monospace;
+    background-image: url("images/wallpaper.gif");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* ----------------------------- */
+/* DESKTOP ICON AREA */
+/* ----------------------------- */
+
+.desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 40px;
+    width: 120px;
+}
+
+.icon {
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.icon img {
+    width: 60px;
+}
+
+.icon p {
+    color: white;
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+
+/* ----------------------------- */
+/* WINDOW STYLE */
+/* ----------------------------- */
+
+.window {
+    display: none;
+    position: absolute;
+    top: 120px;
+    left: 200px;
+    width: 500px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+    z-index: 10;
+    animation: popIn 0.2s ease;
+}
+
+
+/* WINDOW HEADER */
+
+.window-header {
+    background: #c8bfff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    font-weight: bold;
+}
+
+
+/* CLOSE BUTTON */
+
+.window-header button {
+    background: #ff6b6b;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.window-header button:hover {
+    background: #ff4a4a;
+}
+
+
+/* WINDOW CONTENT */
+
+.window-content {
+    padding: 20px;
+}
+
+
+/* ----------------------------- */
+/* PROJECT CARDS */
+/* ----------------------------- */
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-card {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+.project-details {
+    display: none;
+    margin-top: 10px;
+}
+
+.project-card.active .project-details {
+    display: block;
+}
+
+
+/* ----------------------------- */
+/* SKILLS GRID */
+/* ----------------------------- */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.skill-card {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* ----------------------------- */
+/* CONTACT LINKS */
+/* ----------------------------- */
+
+.window-content a {
+    color: #5b5bff;
+    text-decoration: none;
+}
+
+.window-content a:hover {
+    text-decoration: underline;
+}
+
+
+/* ----------------------------- */
+/* WINDOW POP ANIMATION */
+/* ----------------------------- */
+
+@keyframes popIn {
+
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}

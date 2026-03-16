@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adrion's Portfolio 🌸</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cute-header">
+        <h1><i class="fas fa-laptop-code"></i> Adrion's Digital Desk</h1>
+        <p class="subtitle">Computer Science Student • Cybersecurity • HCI</p>
+    </div>
+
+    <div class="desktop">
+        <div class="icon" onclick="openWindow('aboutWindow')">
+            <div class="icon-circle" style="background: #E6E6FA;">
+                <i class="fas fa-user" style="color: #9370DB;"></i>
+            </div>
+            <p>About Me</p>
+        </div>
+
+        <div class="icon" onclick="openWindow('projectsWindow')">
+            <div class="icon-circle" style="background: #F8F4FF;">
+                <i class="fas fa-code" style="color: #BA55D3;"></i>
+            </div>
+            <p>Projects</p>
+        </div>
+
+        <div class="icon" onclick="openWindow('skillsWindow')">
+            <div class="icon-circle" style="background: #F0E6FF;">
+                <i class="fas fa-star" style="color: #DA70D6;"></i>
+            </div>
+            <p>Skills</p>
+        </div>
+
+        <div class="icon" onclick="openWindow('contactWindow')">
+            <div class="icon-circle" style="background: #FFF0F5;">
+                <i class="fas fa-envelope" style="color: #D8BFD8;"></i>
+            </div>
+            <p>Contact</p>
+        </div>
+        
+        <div class="icon" onclick="openWindow('resumeWindow')">
+            <div class="icon-circle" style="background: #FFE4E1;">
+                <i class="fas fa-heart" style="color: #FF69B4;"></i>
+            </div>
+            <p>My Resume</p>
+        </div>
+    </div>
+
+    <div id="aboutWindow" class="window cute-window">
+        <div class="window-header cute-header">
+            <span><i class="fas fa-user"></i> About Me</span>
+            <button onclick="closeWindow('aboutWindow')" class="cute-close">✕</button>
+        </div>
+        <div class="window-content">
+            <h2><i class="fas fa-sparkles"></i> Hello! I'm Adrion/Aniya Thomas. Welcome! </h2>
+            <p>
+                💻 Junior in Computer Science student passionate about making tech both secure and beautiful!
+            </p>
+            <div class="about-details">
+                <div class="detail-box">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Cybersecurity</h3>
+                </div>
+                <div class="detail-box">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Networking</h3>
+                </div>
+                <div class="detail-box">
+                    <i class="fas fa-hand-pointer"></i>
+                    <h3>Human-Computer Interaction</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Window -->
+    <div id="projectsWindow" class="window cute-window">
+        <div class="window-header cute-header">
+            <span><i class="fas fa-code"></i> Projects</span>
+            <button onclick="closeWindow('projectsWindow')" class="cute-close">✕</button>
+        </div>
+        <div class="window-content">
+            <h2><i class="fas fa-rocket"></i> My Projects</h2>
+            <p>Here are some of the things I've been working on!</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3><i class="fas fa-shield-alt"></i> blah</h3>
+                    <p>blah</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fas fa-network-wired"></i>blah</h3>
+                    <p>Rblah </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Window -->
+    <div id="skillsWindow" class="window cute-window">
+        <div class="window-header cute-header">
+            <span><i class="fas fa-star"></i> Skills</span>
+            <button onclick="closeWindow('skillsWindow')" class="cute-close">✕</button>
+        </div>
+        <div class="window-content">
+            <h2><i class="fas fa-graduation-cap"></i> My Skills</h2>
+            <p>Technologies and tools I work with</p>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+                        <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                        <div class="skill-item"><i class="fas fa-c"></i> C++</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
+                        <div class="skill-item"><i class="fas fa-terminal"></i> Linux/macOS </div>
+                        <div class="skill-item"><i class="fab fa-docker"></i> Docker</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Window -->
+    <div id="contactWindow" class="window cute-window">
+        <div class="window-header cute-header">
+            <span><i class="fas fa-envelope"></i> Contact</span>
+            <button onclick="closeWindow('contactWindow')" class="cute-close">✕</button>
+        </div>
+        <div class="window-content">
+            <h2><i class="fas fa-paper-plane"></i> Get in Touch!</h2>
+            <div class="contact-container">
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <a href="mailto:athom0922@gmail.com">athom0922@gmail.com</a>
+                </div>
+                <div class="contact-method">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/m1ngzii" target="_blank">@m1ngzii</a>
+                </div>
+                <div class="contact-method">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/aniya-thomas-87254738b/" target="_blank">Aniya</a>
+                </div>
+                <div class="contact-method">
+                    <i class="fas fa-coffee"></i>
+                    <h3>Let's Chat!</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resume Window -->
+    <div id="resumeWindow" class="window cute-window">
+        <div class="window-header cute-header">
+            <span><i class="fas fa-file-alt"></i> Resume</span>
+            <button onclick="closeWindow('resumeWindow')" class="cute-close">✕</button>
+        </div>
+        <div class="window-content">
+            <h2><i class="fas fa-user-graduate"></i> My Resume</h2>
+            <p>Here's my professional background and experience. Want a detailed look? Download my full resume below!</p>
+            
+            <div class="resume-download">
+                <a href="files/Resume - Aniya Thomas.pdf" download class="download-button">
+                    <i class="fas fa-download"></i>
+                    Download Full Resume
+                </a>
+                <p class="download-note">Updated: March 2026</p>
+            </div>
+            
+            <div class="resume-sections">
+                <div class="resume-section">
+                    <h3><i class="fas fa-user-tie"></i> Professional Summary</h3>
+                    <p> Current student at Kent State University, studying Computer Science with a concentration in Cybersecurity! </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    // Window Management
+    const windows = {};
+    let activeWindow = null;
+
+    // Initialize windows
+    document.addEventListener('DOMContentLoaded', () => {
+        // Find all windows
+        document.querySelectorAll('.window').forEach(win => {
+            windows[win.id] = win;
+            makeDraggable(win);
+        });
+
+        // Set up clock
+        updateClock();
+        setInterval(updateClock, 1000);
+    });
+
+    // Make windows draggable
+    function makeDraggable(element) {
+        let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        const header = element.querySelector('.window-header');
+        if (header) {
+            header.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+            
+            // Bring window to front
+            bringToFront(element.id);
+        }
+
+        function elementDrag(e) {
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+
+            const newTop = element.offsetTop - pos2;
+            const newLeft = element.offsetLeft - pos1;
+            
+            // Check boundaries
+            const maxX = window.innerWidth - element.offsetWidth;
+            const maxY = window.innerHeight - element.offsetHeight - document.querySelector('.taskbar').offsetHeight;
+            
+            element.style.top = `${Math.min(Math.max(0, newTop), maxY)}px`;
+            element.style.left = `${Math.min(Math.max(0, newLeft), maxX)}px`;
+        }
+
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+
+    // Open window
+    function openWindow(windowId) {
+        const window = windows[windowId];
+        if (window) {
+            // Close other windows
+            Object.keys(windows).forEach(id => {
+                if (id !== windowId) {
+                    closeWindow(id);
+                }
+            });
+            
+            // Reset position to center if needed
+            resetWindowPosition(window);
+            
+            // Show window with animation
+            window.style.display = 'flex';
+            setTimeout(() => {
+                window.style.opacity = '1';
+            }, 10);
+            
+            // Set as active window
+            activeWindow = windowId;
+            bringToFront(windowId);
+        }
+    }
+
+    // Close window
+    function closeWindow(windowId) {
+        const window = windows[windowId];
+        if (window) {
+            window.style.opacity = '0';
+            setTimeout(() => {
+                window.style.display = 'none';
+            }, 300);
+            
+            if (activeWindow === windowId) {
+                activeWindow = null;
+            }
+        }
+    }
+
+    // Reset window position to center
+    function resetWindowPosition(window) {
+        if (window.style.top === '' && window.style.left === '') {
+            const winWidth = window.offsetWidth;
+            const winHeight = window.offsetHeight;
+            const top = (window.innerHeight - winHeight) / 2;
+            const left = (window.innerWidth - winWidth) / 2;
+            
+            window.style.top = `${top}px`;
+            window.style.left = `${left}px`;
+        }
+    }
+
+    // Bring window to front
+    function bringToFront(windowId) {
+        const window = windows[windowId];
+        
+        // Reset z-index for all windows
+        Object.values(windows).forEach(win => {
+            win.style.zIndex = 10;
+        });
+        
+        // Bring this window to front
+        window.style.zIndex = 20;
+        activeWindow = windowId;
+    }
+
+    // Update clock
+    function updateClock() {
+        const clockElement = document.getElementById('clock');
+        if (clockElement) {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            clockElement.textContent = `${hours}:${minutes}`;
+        }
+    }
+
+    // Handle clicks outside of windows
+    document.addEventListener('mousedown', (e) => {
+        if (e.target.closest('.window')) {
+            const windowId = e.target.closest('.window').id;
+            bringToFront(windowId);
+        }
+    });
+
+</script>
+</body>
+
+</html>
