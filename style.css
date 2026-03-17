@@ -1,36 +1,41 @@
-/* Reset and base styles */
+/* global reset and variables! */ 
+
+/* reset default browser spacing and make the sizing predictable */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* css variables for the main colors! */
 :root {
     --primary: #b185e8;
     --primary-light: #e6d4ff;
     --secondary: #ff9cdd;
     --accent: #6dc9ff;
-    --bg: #faf5ff;
+    --bg: #faf5ff; /* background base */
     --text: #333333;
     --text-light: #666666;
     --card-bg: rgba(255, 255, 255, 0.9);
     --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-    --radius: 20px;
+    --radius: 20px; /* rounded corners */
     --radius-small: 12px;
 }
-
+/* base page styling! */
 body {
     font-family: 'Nunito', sans-serif;
     background: linear-gradient(135deg, #f5f0ff 0%, #fff5fd 50%, #f0f7ff 100%);
     color: var(--text);
+    /* makes sure footer stays at the bottom */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
     position: relative;
     overflow-x: hidden;
 }
 
-/* Animated background elements */
+/* floating little blobs on the back of the home page! (aka the circles) */
 body::before {
     content: '';
     position: fixed;
@@ -43,16 +48,16 @@ body::before {
         radial-gradient(circle at 90% 40%, var(--secondary) 0%, transparent 20%),
         radial-gradient(circle at 40% 80%, var(--accent) 0%, transparent 20%);
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.3;
     animation: float 20s ease-in-out infinite;
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(1deg); }
+    50% { transform: translateY(-60px) rotate(3deg); }
 }
 
-/* Header */
+/* header for site */
 .site-header {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
     backdrop-filter: blur(20px);
@@ -88,7 +93,7 @@ body::before {
     line-height: 1.6;
 }
 
-/* Navigation */
+/* navigation */
 .main-nav {
     display: flex;
     justify-content: center;
@@ -127,7 +132,7 @@ body::before {
     font-size: 1.1rem;
 }
 
-/* Main Content */
+/* main content  */
 .main-content {
     flex: 1;
     max-width: 1200px;
@@ -136,7 +141,7 @@ body::before {
     width: 100%;
 }
 
-/* Hero Section */
+/* hero section */
 .hero-section {
     display: flex;
     justify-content: center;
@@ -145,12 +150,14 @@ body::before {
     text-align: center;
 }
 
+/* main heading */
 .hero-content h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: var(--primary);
 }
 
+/* intro paragraph */
 .hero-content p {
     font-size: 1.2rem;
     color: var(--text-light);
@@ -194,7 +201,7 @@ body::before {
     color: var(--primary);
 }
 
-/* Page Content Styles */
+/* page content styles */
 .page-header {
     text-align: center;
     margin-bottom: 40px;
@@ -232,7 +239,7 @@ body::before {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Footer */
+/* footer design */
 .site-footer {
     text-align: center;
     padding: 30px 20px;
@@ -246,7 +253,6 @@ body::before {
     color: var(--secondary);
 }
 
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -257,8 +263,7 @@ body::before {
     to { opacity: 1; transform: translateY(0); }
 }
 
-
-/* Responsive Design */
+/* if someones on a tablet on the website */
 @media (max-width: 768px) {
     .header-content h1 {
         font-size: 2.2rem;
@@ -294,6 +299,7 @@ body::before {
     }
 }
 
+/* if someones on a phone on the website */
 @media (max-width: 480px) {
     .header-content h1 {
         font-size: 1.8rem;
@@ -314,6 +320,8 @@ body::before {
         max-width: 250px;
     }
 }
+
+/* navbar! */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -376,36 +384,38 @@ body::before {
     font-size: 1.1rem;
 }
 
-/* PROJECTS.HTML */ 
-/* Updated styles for properly synchronized spine and page dimensions */
+/* project book animation! */ 
+
+/* grid layout for the books, sitting horizontally */
 .project-books {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 50px;
+    grid-template-columns: repeat(3, 280px); 
+    gap: 50px; 
     margin-top: 50px;
     perspective: 1200px;
     justify-items: center;
     align-items: start;
 }
 
+/* individual book container */
 .project-book {
     position: relative;
-    width: 280px;
-    min-height: 400px; /* Fixed minimum height */
-    height: 400px; /* Start with this height */
+    width: 100%;
+    max-width: 280px; 
+    min-height: 400px; 
+    height: 400px; 
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
     cursor: pointer;
-    overflow: visible; /* Ensure spine is visible */
+    overflow: visible; 
 }
 
-/* Dynamic book spine that ALWAYS matches book height */
 .book-spine {
     position: absolute;
     left: 0;
     top: 0;
     width: 30px;
-    height: 100%; /* Always take full height */
+    height: 100%; 
     background: linear-gradient(to right, #7a5cb5, #9370DB);
     border-radius: 3px 0 0 3px;
     box-shadow: 
@@ -418,23 +428,24 @@ body::before {
 
 .book-container {
     position: absolute;
-    left: 30px; /* Start after spine */
+    left: 30px; /* start after spine */
     top: 0;
     width: 280px;
     min-height: 400px;
-    height: 100%; /* Match parent height */
+    height: 100%; /* match parent height */
     transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-book.open .book-container {
-    transform: translateX(0); /* No shift needed since spine is separate */
+    transform: translateX(0); 
 }
 
+/* front of the book */
 .book-cover {
     position: absolute;
     width: 100%;
-    height: 100%; /* Always fill container */
+    height: 100%; 
     background: linear-gradient(135deg, #9370DB, #BA55D3);
     border-radius: 0 15px 15px 0;
     box-shadow: 
@@ -446,7 +457,7 @@ body::before {
     align-items: center;
     color: white;
     padding: 30px 20px;
-    transform-origin: left center;
+    transform-origin: left center; /* rotates when opened */
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
     overflow: hidden;
@@ -491,7 +502,7 @@ body::before {
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%; /* Always fill container */
+    height: 100%; 
     background: linear-gradient(to right, 
         #fefefe 0%, 
         #f8f8f8 3%, 
@@ -614,7 +625,7 @@ body::before {
     transform: rotate(90deg);
 }
 
-/* Custom scrollbar */
+/* custom scrollbar */
 .book-pages::-webkit-scrollbar {
     width: 4px;
 }
@@ -632,10 +643,10 @@ body::before {
     background: rgba(147, 112, 219, 0.5);
 }
 
-/* Responsive adjustments */
+/* if someones on a tablet on the website */
 @media (max-width: 768px) {
     .project-books {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: 1fr;
         gap: 40px;
     }
 
@@ -664,56 +675,17 @@ body::before {
     background: rgba(147, 112, 219, 0.5);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .project-books {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-    }
-
-    .project-book {
-        width: 250px;
-        min-height: 360px;
-        height: 360px;
-    }
-
-    .book-container {
-        width: 250px;
-        min-height: 360px;
-    }
-}
-
-@media (max-width: 480px) {
-    .project-books {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 20px;
-    }
-
-    .project-book {
-        width: 220px;
-        min-height: 320px;
-        height: 320px;
-    }
-
-    .book-container {
-        width: 220px;
-        min-height: 320px;
-    }
-}
-
 }
 
 
 
-/* Section Styles */
 section {
     padding: 80px 50px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* About Section */
+/* about section */
 .about-banner {
     text-align: center;
     margin-bottom: 60px;
@@ -809,7 +781,7 @@ section {
     box-shadow: 0 15px 30px rgba(147, 112, 219, 0.2);
 }
 
-/* Skills Section */
+/* skills */
 .skills-section {
     text-align: center;
 }
@@ -843,6 +815,7 @@ section {
     font-weight: 700;
     color: var(--primary);
     border: 2px solid transparent;
+    /* little hover animation */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: default;
     box-shadow: var(--shadow);
@@ -875,6 +848,7 @@ section {
     opacity: 0.1;
 }
 
+/* the lift and glow animation you see when you hover over it */
 .skill-card:hover {
     transform: translateY(-10px) scale(1.05);
     border-color: var(--primary);
@@ -885,7 +859,7 @@ section {
     opacity: 1;
 }
 
-/* Contact Section */
+/* contact section */
 .contact-section {
     text-align: center;
 }
@@ -978,7 +952,7 @@ section {
     width: 100%;
 }
 
-/* Resume Section */
+/* resume section */
 .resume-section {
     text-align: center;
 }
@@ -1055,7 +1029,7 @@ section {
     box-shadow: 0 15px 40px rgba(147, 112, 219, 0.5);
 }
 
-/* Adding cute contact icons */
+/* the contact emoji icons */
 .contact-card h3::before {
     font-size: 1.8rem;
     margin-right: 8px;
@@ -1072,8 +1046,7 @@ section {
 .contact-card:nth-child(3) h3::before {
     content: '💼';
 }
-
-/* Responsive adjustments */
+/* if someones on a tablet on the website */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -1119,7 +1092,7 @@ section {
         font-size: 2rem;
     }
 }
-
+/* if someones on a phone on the website */
 @media (max-width: 480px) {
     .nav-links {
         flex-direction: column;
@@ -1136,7 +1109,8 @@ section {
     }
 }
 
-/* Updated Profile Photo Styles - Full Square Photo */
+
+/* the photo of me on my website, making sure it shows all of me big enough */
 .about-image {
     background: linear-gradient(135deg, rgba(147, 112, 219, 0.1), rgba(255, 105, 180, 0.1));
     border-radius: var(--radius);
@@ -1201,7 +1175,7 @@ section {
     box-shadow: 0 20px 40px rgba(147, 112, 219, 0.25);
 }
 
-/* Make it responsive */
+/* if someones on a tablet on the website */
 @media (max-width: 768px) {
     .about-image {
         padding: 15px;
@@ -1221,6 +1195,7 @@ section {
     }
 }
 
+/* if someones on a phone on the website */
 @media (max-width: 480px) {
     .profile-photo {
         border-radius: 10px;
